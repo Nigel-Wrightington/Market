@@ -64,7 +64,7 @@ async function seed() {
       (${order.id}, 5, 1);
   `);
 
-  console.log("✅ Done!");
+  console.log("Allllllll Done!");
   await db.end();
 }
 
