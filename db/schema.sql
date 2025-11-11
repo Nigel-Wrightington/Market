@@ -1,6 +1,6 @@
 -- TODO
 -- drop tables first
-DROP TABLE order_products;
+DROP TABLE orders_products;
 DROP TABLE orders;
 DROP TABLE products;
 DROP TABLE users;
@@ -28,9 +28,9 @@ CREATE TABLE products(
     price DECIMAL NOT NULL
 );
 
-CREATE TABLE order_products(
+CREATE TABLE orders_products(
     order_id INT NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
     product_id INT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
-    quanitity INT NOT NULL,
+    quantity INT NOT NULL,
     PRIMARY KEY (order_id, product_id)
 );
