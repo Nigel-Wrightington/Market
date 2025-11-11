@@ -6,6 +6,11 @@ async function seed() {
 
   console.log("Seeding database...");
 
+  // Reset everything
+  await db.query(`
+    TRUNCATE orders_products, orders, products, users RESTART IDENTITY CASCADE;
+  `);
+
   // insert 1 user
   const {
     rows: [user],
